@@ -13,6 +13,8 @@ mongoose.connect(process.env.MONGO_URL/*, {
     .then(() => console.log("Database Connected"))
     .catch(console.error)
 
+const port=process.env.PORT || 3000
+
 const adminRoutes = require('./routes/admin')
 
 app.use(express.urlencoded({ extended: true }))
@@ -24,6 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/admin', adminRoutes)
 
 
-app.listen(3000, (req, res) => {
-    console.log("Running on port 3000")
+app.listen(port, (req, res) => {
+    console.log("Running on port" + port)
 })
