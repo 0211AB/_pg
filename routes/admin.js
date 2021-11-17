@@ -1,0 +1,68 @@
+const express = require('express')
+const router = new express.Router()
+const Admin = require('../models/admin')
+const Product = require('../models/product')
+const bcrypt = require('bcrypt')
+const auth = require('../middleware/auth')
+
+router.get('/login', (req, res) => {
+    res.render('admin/login', { msg: "" })
+})
+
+router.get('/', (req, res) => {
+    res.redirect('admin/login')
+})
+
+router.get('/add-products', auth, (req, res) => {
+    res.render('admin/add-products', { message: "" })
+})
+
+router.post('/login', (req, res) => {
+
+    const username = req.body.username
+    const password = req.body.password
+
+    if (password.length < 8) return res.status(400).render('admin/login', { msg: 'Password length is too small ' })
+
+    //find admin exist or not
+    Admin.findOne({ username }).exec()
+        .then(admin => {
+            //if admin not exist than return status 400
+            if (!admin) return res.status(400).render('admin/login', { msg: 'admin not exist' })
+
+            //if admin exist than compare password
+            //password comes from the admin
+            //admin.password comes from the database
+            bcrypt.compare(password, admin.password, async (err, data) => {
+                //if error than throw error
+                if (err) return res.status(400).render('admin/login', { msg: 'Incorrect Credentials' })
+
+                //if both match than you can do anything
+                if (data) {
+                    const token = await admin.generateAuthToken()
+                    res.cookie('auth_token', token)
+                    res.redirect('add-products')
+                }
+                else {
+                    return res.status(400).render('admin/login', { msg: 'Incorrect Credentials' })
+                }
+
+            })
+
+        })
+})
+
+router.post('/add-products', async (req, res) => {
+    const product = new Product(req.body)
+    await product.save()
+
+    res.render('admin/add-products')
+})
+
+router.get('/view-products', auth, async (req, res) => {
+    Product.find({}).then((products) => {
+        res.render('admin/view-products', { products })
+    })
+})
+
+module.exports = router

@@ -1,0 +1,195 @@
+<%- include('includes/head.ejs') %>
+
+    <div class="home-content">
+        <div id="formcontainer">
+            <form  method="post">
+
+                <h1 style=text-align:center>Owner Details</h1>
+                <div id="inputitem">
+                    <p>Name of PG</p><input type="text" placeholder="Name Of PG" name="nameofpg" required>
+                </div>
+                <div id="inputitem">
+                    <p>ID of PG</p><input type="text" placeholder="ID Of PG" name="idofpg" required>
+                </div>
+                <div id="inputitem">
+                    <p>Name of Owner</p><input type="text" placeholder="Name of owner" name="nameofowner" required>
+                </div>
+                <div id="inputitem">
+                    <p>Contact OF Owner</p><input type="text" name="contactofowner" required>
+                </div>
+                <div id="inputitem">
+                    <p>Name of Person-IN-Charge(Warden)</p><input type="text" placeholder="Person-IN-Charge" name="nameofwarden">
+                </div>
+                <div id="inputitem">
+                    <p>Contact of Person-IN-Charge(Warden)</p><input type="text" name="contactofwarden">
+                </div>
+                <div id="inputitem">
+                    <p>Gender</p><input type="text" name="gender" required>
+                </div>
+                <div id="inputitem">
+                    <p>Address</p><input type="text" placeholder="Address" name="address">
+                </div>
+
+                <h1 style=text-align:center>Availability Details</h1>
+
+                <h3>Single Occupancy</h3>
+                <div id="inputitem">
+                    <p>Total</p><input type="text" name="sototal">
+                    <p>Available</p><input type="text" name="soavailable">
+                    <p>Cost</p><input type="text" name="socost">
+                </div>
+
+                <h3>Double Occupancy</h3>
+                <div id="inputitem">
+                    <p>Total</p><input type="text" name="dototal">
+                    <p>Available</p><input type="text" name="doavailable">
+                    <p>Cost</p><input type="text" name="docost">
+                </div>
+
+                <h3>Triple Occupancy</h3>
+                <div id="inputitem">
+                    <p> Total</p><input type="text" name="tototal">
+                    <p> Available</p><input type="text" name="toavailable">
+                    <p> Cost</p><input type="text" name="tocost">
+                </div>
+
+                <h3>Four Sharing</h3>
+                <div id="inputitem">
+                    <p>Total</p><input type="text" name="fototal">
+                    <p>Available</p><input type="text" name="foavailable">
+                    <p>Cost</p><input type="text" name="focost">
+                </div>
+
+                <h1 style=text-align:center>Food Menu (Breakfast/Lunch)</h1>
+
+                <div id="checkbox">
+                    <label for="Food Included">Food Included</label>
+                    <input type="checkbox" id="Food Included" name="foodincluded" value="true">
+                </div>
+
+                <div id="checkbox">
+                    <label for="Compulsory">Compulsory</label>
+                    <input type="checkbox" id="Compulsory" name="compulsory" value="true">
+                </div>
+
+                <div id="inputitem">
+                    <p>Monday</p><input type="text" name="fmmonday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Tueday</p><input type="text" name="fmtuesday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Wednesday</p><input type="text" name="fmwednesday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Thursday</p><input type="text" name="fmthursday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Friday</p><input type="text" name="fmfriday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Saturday</p><input type="text" name="fmsaturday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Sunday</p><input type="text" name="fmsunday">
+                </div>
+
+                <h1 style=text-align:center>Food Menu (Dinner)</h1>
+
+                <div id="inputitem">
+                    <p>Monday</p><input type="text" name="fnmonday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Tueday</p><input type="text" name="fntuesday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Wednesday</p><input type="text" name="fnwednesday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Thursday</p><input type="text" name="fnthursday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Friday</p><input type="text" name="fnfriday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Saturday</p><input type="text" name="fnsaturday">
+                </div>
+
+                <div id="inputitem">
+                    <p>Sunday</p><input type="text" name="fnsunday">
+                </div>
+
+                <h1 style=text-align:center>Additional Details</h1>
+
+
+
+                <div id="checkbox">
+                    <label for="Laundry">Laundry</label>
+                    <input type="checkbox" id="Laundry" name="Laundry" value="true">
+                </div>
+
+                <div id="checkbox">
+                    <label for="Electricity Bill included in rent">Electricity Bill included in rent</label>
+                    <input type="checkbox" id="Electricity Bill included in rent" name="ElectricityBill" value="true">
+                </div>
+
+                <div id="checkbox">
+                    <label for="Wifi">Wifi</label>
+                    <input type="checkbox" id="Wifi" name="Wifi" value="true">
+                        <p>Speed</p><input type="text" name="speed">
+                </div>
+
+                <div id="checkbox">
+                    <label for="Geyser">Geyser</label>
+                    <input type="checkbox" id="Geyser" name="geyser" value="true">
+                </div>
+
+                <div id="inputitem">
+                    <p>Kitchen</p><input type="text" name="kitchen">
+                </div>
+
+                <div id="inputitem">
+                    <p>Security Deposity</p><input type="text" name="secutitydeposit">
+                </div>
+
+                <div id="inputitem">
+                    <p>Refund Policy</p><input type="text" name="refundpolicy">
+                </div>
+
+                <div id="inputitem">
+                    <p>IN Time</p><input type="text" name="intime">
+                </div>
+
+                <div id="inputitem">
+                    <p>Housekeeping</p><input type="text" name="housekeeping">
+                </div>
+
+                <div id="inputitem">
+                    <p>Drinking Water</p><input type="text" name="drinkingwater">
+                </div>
+
+                <div id="inputitem">
+                    <p>Furniture</p><input type="text" name="furniture">
+                </div>
+
+                <div id="submitbox">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <%- include('includes/end.ejs') %>

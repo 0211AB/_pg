@@ -1,0 +1,50 @@
+<%- include('includes/head.ejs') %>
+
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div id="headings">
+                    <div id="item">
+                        <h1>Name Of PG</h1>
+                    </div>
+                    <div id="item">
+                        <h1>Name Of Owner</h1>
+                    </div>
+                    <div id="item">
+                        <h1>ID Of PG</h1>
+                    </div>
+                    <div id="item">
+                        <h1>Gender </h1>
+                    </div>
+                </div>
+
+                <% products.forEach(function(product){ %>
+                    <div id="headings">
+                        <div id="item">
+                            <h1>
+                                <%=product.nameofpg %>
+                            </h1>
+                        </div>
+                        <div id="item">
+                            <h1>
+                                <%=product.nameofowner %>
+                            </h1>
+                        </div>
+                        <div id="item">
+                            <h1>
+                                <%=product.idofpg %>
+                            </h1>
+                        </div>
+                        <div id="item">
+                            <h1>
+                                <%=product.gender %>
+                            </h1>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+    </div>
+
+    <%- include('includes/end.ejs') %>
