@@ -2,6 +2,7 @@ const express = require('express')
 const router = new express.Router()
 const Admin = require('../models/admin')
 const Product = require('../models/product')
+const Flat = require('../models/flats')
 const bcrypt = require('bcrypt')
 const auth = require('../middleware/auth')
 
@@ -15,6 +16,10 @@ router.get('/', (req, res) => {
 
 router.get('/add-products', auth, (req, res) => {
     res.render('admin/add-products', { message: "" })
+})
+
+router.get('/add-flats', auth, (req, res) => {
+    res.render('admin/add-flats')
 })
 
 router.post('/login', (req, res) => {
@@ -59,9 +64,22 @@ router.post('/add-products', async (req, res) => {
     res.render('admin/add-products')
 })
 
+router.post('/add-flats', async (req, res) => {
+    const flat = new Flat(req.body)
+    await flat.save()
+
+    res.render('admin/add-flats')
+})
+
 router.get('/view-products', auth, async (req, res) => {
     Product.find({}).then((products) => {
         res.render('admin/view-products', { products })
+    })
+})
+
+router.get('/view-flats', auth, async (req, res) => {
+    Flat.find({}).then((flats) => {
+        res.render('admin/view-flats', { flats })
     })
 })
 

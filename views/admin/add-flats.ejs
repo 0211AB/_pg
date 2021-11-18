@@ -1,0 +1,42 @@
+<%- include('includes/head.ejs') %>
+
+    <div class="home-content">
+        <div id="formcontainer">
+            <form method="post">
+
+                <h1 style=text-align:center>Owner Details</h1>
+                <div id="inputitem">
+                    <p>ID of Flat</p><input type="text" placeholder="ID Of PG" name="idofflat" required>
+                </div>
+                <div id="inputitem">
+                    <p>Cost</p><input type="text" placeholder="Cost" name="Cost" required>
+                </div>
+                <div id="inputitem">
+                    <p>Floor </p><input type="text" name="floor">
+                </div>
+                <div id="inputitem">
+                    <p>BHK </p><input type="text" name="bhk" required>
+                </div>
+                <div id="inputitem">
+                    <p>Address </p><input type="text" name="address">
+                </div>
+                <div id="inputitem">
+                    <p>Distance from JUSL</p><input type="text" name="distancefromjusl">
+                </div>
+                <div id="inputitem">
+                    <p>Distance from Techno India</p><input type="text" name="distancefromtechno">
+                </div>
+                <div id="inputitem">
+                    <p>Distance from IEM</p><input type="text" name="distancefromiem">
+                </div>
+
+                <div id="submitbox">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <%- include('includes/end.ejs') %>
