@@ -58,17 +58,18 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/add-products', async (req, res) => {
+    
     const product = new Product(req.body)
     await product.save()
 
-    res.render('admin/add-products')
+    res.redirect('add-products')
 })
 
 router.post('/add-flats', async (req, res) => {
     const flat = new Flat(req.body)
     await flat.save()
 
-    res.render('admin/add-flats')
+    res.redirect('add-flats')
 })
 
 router.get('/view-products', auth, async (req, res) => {

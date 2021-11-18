@@ -5,7 +5,7 @@ const Product = require('../models/product')
 
 
 router.get('/', (req, res) => {
-    res.render('user/homepage', { msg: "" })
+    res.render('user/homepage')
 })
 
 module.exports = router
