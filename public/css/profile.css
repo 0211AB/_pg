@@ -1,0 +1,193 @@
+
+.firstbox{
+    background-color: white;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    /* padding-bottom: 2%; */
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.pgimages{
+    /* width: 40%; */
+    margin: 2%;
+}
+
+.pgpic{
+    width: 100%;
+}
+
+.top-details{
+    padding: 1%;
+    /* background-color: tomato */
+    /* This min width is required to make the div larger so that the tsbles align in a row in laptop view */
+    min-width: 50%;
+    /* margin: 2%; */
+
+}
+
+
+.pgid{
+    margin-bottom: 0%;
+}
+
+.gender{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+
+.tables{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.amount{
+    /* background-color: chocolate; */
+    padding-left: 10px;
+}
+
+.firsttable{
+    margin-right: 5%;
+}
+
+/* #firsttable{
+    margin-right: 2%;
+} */
+
+/* try to see whats exactly the problem */
+/* #secondtable{
+    padding-left: 2%;
+} */
+
+
+  .secondbox{
+      background-color: white;
+      margin-right: 7%;
+      margin-left: 7%;
+      margin-top: 1%;
+      padding: 2%;
+  }
+
+  .pgdetails{
+      margin-top: 4%;
+      margin-bottom: 4%;
+      display: flex;
+      justify-content:start;
+      flex-wrap: wrap;
+  }
+
+  .block1{
+      padding-left: 7%;
+  }
+
+  .block2{
+      padding-left: 7%;
+  }
+
+  #refund{
+      margin-bottom: 2.5%;
+      padding-left: 5%;
+  }
+
+  .detailfield{
+      font-size: 21px;
+      font-weight:bold;
+      margin-right: 4px;
+      /* color: navy; */
+  }
+
+
+  .thirdbox{
+    background-color: white;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-top: 1%;
+    padding: 2%;
+}
+
+.reviews{
+    padding-left: 2%;
+}
+
+.reviews>h2{
+    text-align: center;
+}
+
+.reviewpara{
+    padding-left: 2%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.write{
+    max-width: 400px;
+    /* width: 40%; */
+}
+
+.submit{
+    width: 70px;
+    height: 35px;
+    margin-top: 1%;
+}
+
+
+
+  @media only screen and (max-width: 850px)
+  {
+      .firstbox{
+          margin-left: 2%;
+          margin-right: 2%;
+      }
+
+      .secondbox{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+      .thirdbox{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 1322px)
+  {
+    .tables{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+  }
+
+  @media only screen and (max-width: 996px)
+  {
+    .top-details{
+        min-width: 100%
+    }
+
+    .tables,.firstbox{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (max-width: 480px)
+  {
+
+    body{
+        font-size: 16px;
+    }
+  }

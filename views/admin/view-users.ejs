@@ -1,0 +1,42 @@
+<%- include('includes/head.ejs') %>
+
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div id="headings">
+                    <div id="item">
+                        <h1>Name Of Student</h1>
+                    </div>
+                    <div id="item">
+                        <h1>Number of student</h1>
+                    </div>
+                    <div id="item">
+                        <h1>Gender </h1>
+                    </div>
+                </div>
+
+                <% users.forEach(function(user){ %>
+                    <div id="headings">
+                        <div id="item">
+                            <h1>
+                                <%=user.username %>
+                            </h1>
+                        </div>
+                        <div id="item">
+                            <h1>
+                                <%= user.number %>
+                            </h1>
+                        </div>
+                        <div id="item">
+                            <h1>
+                                <%= user.gender %>
+                            </h1>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+    </div>
+
+    <%- include('includes/end.ejs') %>

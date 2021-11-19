@@ -10,167 +10,144 @@
                 <!-- Hero -->
                 <img src="./images/banner1.png" alt="" class="hero-img" />
 
-                    <div class="hero-content">
-                        <h2>Revolutionising student community </h2>
-                        <h1>
-                            <span>CORNERSTONE</span>
-                        </h1>
-                        <a class="btn" href="#">PGs</a>
-                        <a class="btn" href="#">Flats</a>
-                    </div>
+                <div class="hero-content">
+                    <h2>Home Away From Home </h2>
+                    <h1>
+                        <span>CORNERSTONE</span>
+                    </h1>
+                    <a class="btn" href="pgs">PGs</a>
+                    <a class="btn" href="flats">Flats</a>
+                </div>
         </header>
 
         <!-- Main -->
-        <main>
+        <section class="services" id="padding">
+
             <div class="title">
-                <h1>Why Choose Us?</h1>
+                <h1>Why Choose Us</h1>
             </div>
-            <section class="advert section">
-                <div class="advert-center container">
-                    <div class="advert-box">
-                        <div class="dotted">
-                            <div class="content">
-                                <h2>
-                                    Girls <br />
-                                    Safety
-                                </h2>
-                                <h4>Exclusive girls only PGs</h4>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="advert-box">
-                        <div class="dotted">
-                            <div class="content">
-                                <h2>
-                                    Affordable <br />
-                                    Prices
-                                </h2>
-                                <h4>Suiting to your needs</h4>
-                            </div>
-                        </div>
-                    </div>
+            <div class="box-container">
 
-                    <div class="advert-box">
-                        <div class="dotted">
-                            <div class="content">
-                                <h2>
-                                    Premium <br />
-                                    Locations
-                                </h2>
-                                <h4>Close to the campus</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Featured -->
-            <section class="section featured">
-                <div class="title">
-                    <h1>PGs</h1>
+                <div class="box">
+                    <img src="images/wcu1.jpg" alt="">
+                    <h3>NO BROKERAGE/HIDDEN CHARGES/TERMS AND CONDITIONS</h3>
+                    <p>Best things in life are often free</p>
                 </div>
 
+                <div class="box">
+                    <img src="images/wcu2.jpg" alt="">
+                    <h3>CEASE THE HOUSE HUNT</h3>
+                    <p>Wishlist properties and our team will accompany you to the location</p>
+                </div>
+
+                <div class="box">
+                    <img src="images/wcu3.jpg" alt="">
+                    <h3>Rs.250 CASHBACK</h3>
+                    <p>Right decisions are always rewarded</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Featured -->
+        <section class="section featured">
+            <div class="title">
+                <h1>PGs</h1>
+            </div>
+
+            <% products.forEach((product)=>{ %>
                 <div class="product-center container">
                     <div class="product">
                         <div class="product-header">
                             <img src="./images/pic2.jpg" alt="">
                             <ul class="icons">
-                                <span><i class="bx bx-heart"></i></span>
-                                <span><i class="bx bx-search"></i></span>
+                                <span><i class="bx bx-heart"></i> Wishlist</span>
                             </ul>
                         </div>
                         <div class="product-footer">
-                            <a href="#">
-                                <h3>Dunlop</h3>
-                            </a>
-                            <h4 class="price">FLAT ID:#12345</h4>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-header">
-                            <img src="./images/pic1.jpg" alt="">
-                            <ul class="icons">
-                                <span><i class="bx bx-heart"></i></span>
-                                <span><i class="bx bx-search"></i></span>
-                            </ul>
-                        </div>
-                        <div class="product-footer">
-                            <a href="#">
-                                <h3>Behala</h3>
-                            </a>
-                            <h4 class="price">FLAT ID:#12345</h4>
+                            <h3>CornerDen#<%= product.idofpg %>
+                            </h3>
+                            <form action="pgdetails" method="post"><span><input class="hidden"
+                                        value="<%= product._id %>" name="id"></span><button type="submit"
+                                    class="btn">Details</a></form>
                         </div>
                     </div>
                 </div>
-                <div id="center">
-                    <a class="btn" href="#">All PGs</a>
-                </div>
-
-            </section>
-
-            <!--Latest -->
-            <section class="section featured">
-                <div class="title">
-                    <h1>Flats</h1>
-                </div>
-
-                <div class="product-center container">
-                    <div class="product">
-                        <div class="product-header">
-                            <img src="./images/pic5.jpg" alt="">
-
-                            <ul class="icons">
-                                <span><i class="bx bx-heart"></i></span>
-                                <span><i class="bx bx-search"></i></span>
-                            </ul>
-                        </div>
-                        <div class="product-footer">
-                            <a href="#">
-                                <h3>Chetla</h3>
-                            </a>
-                            <h4 class="price">FLAT ID:#12345</h4>
-                        </div>
+                <% }) %>
+                    <div id="center">
+                        <a class="btn" href="pgs">All PGs</a>
                     </div>
-                    <div class="product">
-                        <div class="product-header">
-                            <img src="./images/pic2.jpg" alt="">
 
-                            <ul class="icons">
-                                <span><i class="bx bx-heart"></i></span>
-                                <span><i class="bx bx-search"></i></span>
-                            </ul>
+        </section>
+
+        <!--Latest -->
+        <section class="section featured" id="padding">
+            <div class="title">
+                <h1>Flats</h1>
+            </div>
+
+            <div class="box-container">
+
+                <% flats.forEach((flat)=>{ %>
+                    <div class="box">
+                        <div class="image-container">
+                            <img src="images/img-1.jpg" alt="">
                         </div>
-                        <div class="product-footer">
-                            <a href="#">
-                                <h3>Behala</h3>
-                            </a>
-                            <h4 class="price">FLAT ID:#12345</h4>
-                        </div>
-                    </div>
-                </div>
-                <div id="center">
-                    <a class="btn" href="#">All Flats</a>
-                </div>
-
-            </section>
-
-            <!-- Product Banner -->
-            <section class="section">
-                <div class="product-banner">
-                    <div class="left">
-                        <img src="./images/banner1.jpg" alt="" />
-                    </div>
-                    <div class="right">
                         <div class="content">
-                            <h2><span class="discount">Refferal</span> Program</h2>
-                            <h1>
-                                <span>Exclusive perks</span>
-                                <span>if people signup with your referral code</span>
-                            </h1>
-                            <a class="btn" href="#">Sign Up</a>
+                            <div class="price">
+                                <h3>Rs<%=flat.Cost %>/mo</h3>
+                            </div>
+                            <div class="location">
+                                <h3>CornerDen #<%=flat.idofflat %>
+                                </h3>
+                                <p>
+                                    <%=flat.distancefromjusl %> mins distace from JUSL
+                                </p>
+                                <p>
+                                    <%=flat.distancefromiem %> mins distace from IEM
+                                </p>
+                                <p>
+                                    <%=flat.distancefromtechno %> mins distace from TECHNO INDIA
+                                </p>
+                            </div>
+                            <div class="details">
+                                <h3> <i class="fas fa-expand"></i>
+                                    <%=flat.floor %> Floor
+                                </h3>
+                                <h3> <i class="fas fa-bed"></i>
+                                    <%=flat.bhk %>
+                                </h3>
+                            </div>
+                            <div class="buttons">
+                                <a href="https://chat.whatsapp.com/IGhfivV4PHA2DmndDgOY7Q" class="btn">Whatsapp</a>
+                                <a href="tel:8017254479" class="btn">Call</a>
+                            </div>
                         </div>
                     </div>
+                    <% }) %>
+            </div>
+            <div id="center">
+                <a class="btn" href="flats">All Flats</a>
+            </div>
+
+        </section>
+
+        <!-- Product Banner -->
+        <section class="section">
+            <div class="product-banner">
+                <div class="left">
+                    <img src="./images/banner1.jpg" alt="" />
                 </div>
-            </section>
-            <%- include('includes/end.ejs') %>
+                <div class="right">
+                    <div class="content">
+                        <h2><span class="discount">Rs. 250</span> CASHBACK</h2>
+                        <h1>
+                            <span>Exclusive perks</span>
+                            <span>if you signup</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('includes/end.ejs') %>

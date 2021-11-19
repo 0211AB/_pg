@@ -1,0 +1,204 @@
+<%- include('includes/head.ejs') %>
+    <title>PG Details</title>
+    <link rel="stylesheet" href="css/profile.css">
+    </head>
+
+    <body>
+
+        <%- include('includes/nav.ejs') %>
+            <div class="firstbox">
+
+
+
+                <div class="pgimages">
+                    <img class="pgpic" src="images/sampleflat.png" alt="Photo of PG from backend">
+                </div>
+
+
+
+                <div class="top-details">
+
+
+                    <div class="heading">
+                        <h1 class="pgid">CornerDen #<%= product.idofpg %>
+                        </h1>
+                        <h4 class="gender" id=gender>
+                            <%= product.gender %>
+                        </h4>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="tables">
+
+
+                        <div class="firsttable">
+                            <table id="firsttable">
+                                <tr>
+                                    <td>Four Sharing</td>
+                                    <td>
+                                        <%= product.foac %>
+                                    </td>
+                                    <td class="amount">
+                                        <%= product.focost %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Triple Sharing</td>
+                                    <td>
+                                        <%= product.toac %>
+                                    </td>
+                                    <td class="amount">
+                                        <%= product.tocost %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Double Sharing</td>
+                                    <td>
+                                        <%= product.doac %>
+                                    </td>
+                                    <td class="amount">
+                                        <%= product.docost %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Single Occupancy</td>
+                                    <td>
+                                        <%= product.soac %>
+                                    </td>
+                                    <td class="amount">
+                                        <%= product.socost %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br>
+
+                        <div class="secondtable">
+                            <table id="secondtable">
+                                <tr>
+                                    <td>
+                                        <%= product.distancefromjusl %> mins
+                                    </td>
+                                    <td>from</td>
+                                    <td>JU Salt Lake Campus</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= product.distancefromtechno %> mins
+                                    </td>
+                                    <td>from</td>
+                                    <td>Techno India</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= product.distancefromiem %> mins
+                                    </td>
+                                    <td>from</td>
+                                    <td>IEM</td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="buttons">
+                        <a class="btn" id="" href="https://chat.whatsapp.com/IGhfivV4PHA2DmndDgOY7Q"> Whatsapp </a>
+                        <a class="btn" id="" href="tel:8017254479"> Call</a>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="secondbox">
+
+
+                <div class="foodmenu">
+
+                    <h2>Food Menu Overview</h2>
+
+                    <ul>
+                        <li class="food" id="menu1">
+                            <%= product.foodbullet1 %>
+                        </li>
+                        <li class="food" id="menu2">
+                            <%= product.foodbullet2 %>
+                        </li>
+                        <li class="food" id="menu3">
+                            <%= product.foodbullet3 %>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="pgdetails">
+
+                    <div class="block1">
+                        <div class="details"> <span class="detailfield"> Washroom: </span> <span id="Washroom">
+                                <% if(product.washroom){ %> Attached <% }else{ %> Attached/Non Attached <% } %>
+                            </span> </div>
+                        <div class="details"> <span class="detailfield"> Laundary: </span> <span id="Laundary">
+                                <% if(product.Laundary){ %> Available <% }else{ %> Not Available <% } %>
+                            </span> </div>
+                        <div class="details"> <span class="detailfield"> Wifi: </span> <span id="Wifi">
+                                <% if(product.wifi){ %> Available <% }else{ %> Not Available <% } %>
+                            </span>
+                        </div>
+                        <div class="details"> <span class="detailfield"> Speed: </span> <span id="Speed">
+                                <%= product.speed %>
+                            </span>
+                        </div>
+                        <div class="details"> <span class="detailfield"> Kitchen Availability: </span> <span
+                                id="Kitchen">
+                                <%= product.kitchen %>
+                            </span> </div>
+                        <div class="details"> <span class="detailfield"> Drinking Water: </span> <span id="Water">
+                                <%= product.drinkingwater %>
+                            </span> </div>
+                    </div>
+
+                    <div class="block2">
+                        <div class="details"> <span class="detailfield"> Housekeeping: </span> <span
+                                id="Housekeeping"></span>
+                            <%= product.housekeeping %>
+                                </span>
+                        </div>
+                        <div class="details"> <span class="detailfield"> Safety and Security: </span> <span
+                                id="safety">Available</span> </div>
+                        <div class="details"> <span class="detailfield"> In/Out Timing: </span> <span id="inout">
+                                <%= product.intime %>
+                            </span> </div>
+                        <div class="details"> <span class="detailfield"> Furniture: </span> <span id="furniture">
+                                <%= product.furniture %>
+                            </span> </div>
+                        <div class="details"> <span class="detailfield"> Additional Appliances: </span> <span
+                                id="appliance">
+                                <%= product.kitchen %>
+                            </span> </div>
+                        <div class="details"> <span class="detailfield"> Security Deposit: </span> <span id="security">
+                                <%= product.securitydeposit %>
+                            </span> </div>
+                    </div>
+
+                </div>
+
+
+                <div class="details" id="refund"> <span class="detailfield"> Refund Policy:</span> <span
+                        id="security"><%= product.refundpolicy %></span> </div>
+
+
+            </div>
+
+
+            <%- include('includes/end.ejs') %>

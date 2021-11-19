@@ -1,0 +1,54 @@
+<%- include('includes/head.ejs') %>
+    <title>Flats</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <%- include('includes/nav.ejs') %>
+            <section class="section featured" id="padding">
+                <div class="title">
+                    <h1>Flats</h1>
+                </div>
+
+                <div class="box-container">
+
+                    <% flats.forEach(function(flat){ %>
+                        <div class="box">
+                            <div class="image-container">
+                                <img src="images/img-1.jpg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="price">
+                                    <h3>Rs<%=flat.Cost %>/mo</h3>
+                                </div>
+                                <div class="location">
+                                    <h3>CornerDen #<%=flat.idofflat %>
+                                    </h3>
+                                    <p>
+                                        <%=flat.distancefromjusl %> mins distace from JUSL
+                                    </p>
+                                    <p>
+                                        <%=flat.distancefromiem %> mins distace from IEM
+                                    </p>
+                                    <p>
+                                        <%=flat.distancefromtechno %> mins distace from TECHNO INDIA
+                                    </p>
+                                </div>
+                                <div class="details">
+                                    <h3> <i class="fas fa-expand"></i>
+                                        <%=flat.floor %> Floor
+                                    </h3>
+                                    <h3> <i class="fas fa-bed"></i>
+                                        <%=flat.bhk %>
+                                    </h3>
+                                </div>
+                                <div class="buttons">
+                                    <a href="https://chat.whatsapp.com/IGhfivV4PHA2DmndDgOY7Q" class="btn">Whatsapp</a>
+                                    <a href="tel:8017254479" class="btn">Call</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </section>
+            <%- include('includes/end.ejs') %>

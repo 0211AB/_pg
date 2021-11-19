@@ -1,0 +1,28 @@
+<%- include('includes/head.ejs') %>
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="css/wishlist.css">
+    </head>
+
+    <body>
+        <%- include('includes/nav.ejs') %>
+
+            <section class="shopping-cart">
+
+                <h1 class="title"> Your Wishlist </h1>
+
+                <div class="box-container">
+
+                    <% products.forEach((product)=>{ %>
+                    <div class="box">
+                        <img src="images/pic1.jpg" alt="">
+                        <div class="content">
+                            <h3><%= product.gender %>PG</h3>
+                                <span>Cornerden#<%= product.idofpg %></span>
+                        </div>
+                    </div>
+              
+                <% }) %>
+            </div>
+            </section>
+
+            <%- include('includes/end.ejs') %>

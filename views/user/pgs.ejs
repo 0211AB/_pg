@@ -1,0 +1,42 @@
+<%- include('includes/head.ejs') %>
+    <title>PGs</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <%- include('includes/nav.ejs') %>
+            <section class="section all-products" id="products">
+
+                <div class="top container">
+                    <h1>All PGs</h1>
+                    <%# <form>
+                        <select>
+                            <option value="1">Defualt Sorting</option>
+                            <option value="2">Female Pgs only</option>
+                            <option value="3">Sort By Price</option>
+                            <option value="4">Sort By location</option>
+                        </select>
+                        </form> %>
+                </div>
+
+                <div class="product-center container">
+                    <% products.forEach((product)=>{ %>
+                        <div class="product">
+                            <div class="product-header">
+                                <img src="./images/pic2.jpg" alt="">
+                                <ul class="icons">
+                                    <span class="wishlist"><i class="bx bx-heart"></i> Wishlist</span>
+                                </ul>
+                            </div>
+                            <div class="product-footer">
+                                <h3>CornerDen#<%= product.idofpg %>
+                                </h3>
+                                <form action="pgdetails" method="post"><span><input class="hidden"
+                                            value="<%= product._id %>" name="id"></span><button type="submit"
+                                        class="btn">Details</a></form>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </section>
+            <%- include('includes/end.ejs') %>

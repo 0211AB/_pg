@@ -5,6 +5,7 @@ const Product = require('../models/product')
 const Flat = require('../models/flats')
 const bcrypt = require('bcrypt')
 const auth = require('../middleware/auth')
+const User=require('../models/user')
 
 router.get('/login', (req, res) => {
     res.render('admin/login', { msg: "" })
@@ -75,6 +76,12 @@ router.post('/add-flats', async (req, res) => {
 router.get('/view-products', auth, async (req, res) => {
     Product.find({}).then((products) => {
         res.render('admin/view-products', { products })
+    })
+})
+
+router.get('/view-users', auth, async (req, res) => {
+    User.find({}).then((users) => {
+        res.render('admin/view-users', { users})
     })
 })
 

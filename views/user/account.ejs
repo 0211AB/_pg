@@ -1,0 +1,100 @@
+<%- include('includes/head.ejs') %>
+    <title>Account</title>
+    <link rel="stylesheet" href="css/account.css">
+    </head>
+
+    <body>
+        <%- include('includes/nav.ejs') %>
+            <h1 id="heading">Your Profile</h1>
+
+
+            <div class="firstbox">
+
+                <div class="first-element">
+                    <!-- include upload your photo option -->
+                    <div class="dp">
+                        <i class='bx bxs-user-circle'></i>
+                    </div>
+                    <h1 id="Name">
+                        <%= user.username %>
+                    </h1>
+                </div>
+
+                <div class="details">
+                    <h3>Contact: <span class="info">
+                            <%= user.number %>
+                        </span> </h3>
+                    <h3>Gender: <span class="info">
+                            <%= user.gender %>
+                        </span></h3>
+                    <br>
+                    <h3>Cornerstone Cash: <span class="info">
+                            <% if(!user.extradetails){ %>
+                                Rs. 0/-
+                                <% }else{ %>
+                                    Rs. 250/-
+                                    <% } %>
+                        </span> </h3>
+
+                    <h3>Cash Redeemed: <span class="info">Rs. 0/-</span> </h3>
+                    <!-- <p id="para">Fill out the  form below to avail Rs. 250/- Cornerstone Cash which you can use to make your rent payments.</p> -->
+                </div>
+            </div>
+
+            <!-- hide the secnd box once the update form has been filled -->
+            <div class="secondbox">
+
+                <% if(!user.extradetails){ %>
+                    <div class="bottomdetails">
+                        <h1>Update your Profile</h1>
+                        <p> Complete your profile to avail Rs. 250/- Cornerstone Cash which you can use to make your
+                            rent
+                            paytments</p>
+                    </div>
+
+                    <div class="aboveform">
+                        <form action="account" method="post">
+                            <div class="form">
+                                <input class="input" type="text" required name="college" placeholder="College Name">
+                                <input class="input" type="date" required name="dob" id="" placeholder="Date of Birth">
+                                <input class="input" type="text" required name="dept" placeholder="Department">
+                                <input class="input" type="text" required name="gradyear" id=""
+                                    placeholder="Year of Graduation">
+                                <input class="input" type="text" name="altnumber" placeholder="Alternate Number">
+                                <input class="input" type="email" required name="email" placeholder="Email ID">
+                                <textarea id="address" class="input" required name="address" id="" cols="30" rows="3"
+                                    placeholder="Home Address"></textarea>
+                            </div>
+                            <div class="form">
+                                <input class="btn" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                    <% }else{ %>
+                        <div class="aboveform">
+                            <div class="details">
+                                <h3>College: <span class="info">
+                                        <%= user.college %>
+                                    </span> </h3>
+                                <h3>Date of Birth: <span class="info">
+                                        <%= user.dob %>
+                                    </span></h3>
+                                <h3>Department: <span class="info">
+                                        <%= user.dept %>
+                                    </span></h3>
+                                <h3>Year of Graduation: <span class="info">
+                                        <%= user.gradyear %>
+                                    </span></h3>
+                                <h3> Home Address: <span class="info">
+                                        <%= user.address %>
+                                    </span></h3>
+                                <h3> Email: <span class="info">
+                                        <%= user.email %>
+                                    </span></h3>
+                            </div>
+                        </div>
+                        <% } %>
+
+            </div>
+
+            <%- include('includes/end.ejs') %>

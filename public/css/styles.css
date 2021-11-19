@@ -22,6 +22,10 @@
     box-sizing: border-box;
     font-size: 62.5%;
   }
+
+  button{
+    border-radius: 10px;
+  }
   
   body {
     font-family: "Poppins", sans-serif;
@@ -236,7 +240,7 @@
   /* Hero */
   .header .hero-img {
     position: absolute;
-    bottom: -10%;
+    bottom: -38%;
     right: -5%;
     height: 70rem;
     object-fit: contain;
@@ -257,7 +261,7 @@
   
   .hero-content h1 span {
     color: #253b70;
-    font-size: 8rem;
+    font-size: 6.3rem;
     font-weight: 700;
     display: block;
     line-height: 1;
@@ -265,9 +269,10 @@
   }
   
   .btn {
+    border-radius: 10px;
     display: inline-block;
-    background-color: #fc7c7c;
-    padding: 1.2rem 4rem;
+    background-color:#fe7062;
+    padding: 1.2rem 1.4rem;
     color: #fff;
     font-weight: 600;
     text-transform: uppercase;
@@ -277,6 +282,7 @@
   @media only screen and (max-width: 1200px) {
     .header .hero-img {
       right: -20%;
+      bottom: -30%;
     }
   
     .hero-content {
@@ -286,9 +292,13 @@
     .hero-content h2 {
       font-size: 2rem;
     }
+
+    .header .hero-img {
+      height: 60rem;
+    }
   
     .hero-content h1 span {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
   
@@ -327,7 +337,7 @@
     }
   
     .hero-content h1 span {
-      font-size: 4rem;
+      font-size: 3.2rem;
     }
   
     .hero-content a {
@@ -428,10 +438,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 7rem 23rem;
+    margin-bottom: 5%;
   }
   
   .product {
-    height: 44rem;
+    height: 48rem;
     background-color: #fff;
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
     border-radius: 1rem;
@@ -496,14 +507,14 @@
     background-color: #fff;
     font-size: 2.5rem;
     display: block;
-    border-radius: 50%;
+    border-radius:10px;
     padding: 1.5rem 1.6rem;
     line-height: 2rem;
     cursor: pointer;
     transition: all 300ms ease-in-out;
   }
   
-  .product-header .icons span i {
+  .product-header .icons span{
     transition: all 500ms ease-in-out;
   }
   
@@ -512,7 +523,8 @@
   }
   
   .product-header .icons span:hover {
-    background-color: #ff7c9c;
+
+    background-color:#fe7062;
     color: #fff;
   }
   
@@ -684,13 +696,13 @@
   
   .footer-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     color: var(--white);
   }
   
   .footer-center a:link,
   .footer-center a:visited {
-    display: inline;
+    display: flex;
     padding-right:2.8rem;
     color: #f1f1f1;
     font-size: 1.4rem;
@@ -704,6 +716,7 @@
   .footer-center div {
     color: #f1f1f1;
     font-size: 1.4rem;
+    justify-content: center;
   }
   
   .footer-center h3 {
@@ -747,15 +760,7 @@
     position: relative;
     z-index: 1;
   }
-  
-  form span {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    z-index: 0;
-  }
+
   
   @media only screen and (max-width: 768px) {
     .all-products .top select {
@@ -787,11 +792,18 @@
   /* Detail */
   .product-detail .details {
     display:flex;
-    height:80vh;
-    justify-content: space-around;
+    justify-content: space-between;
     gap:7rem;
+    padding:.2rem;
   }
   
+  .product-detail .details2 {
+    display:flex;
+    justify-content: space-evenly;
+    gap:7rem;
+    padding:.2rem;
+  }
+
   .product-detail .left {
     display: flex;
     flex-direction: column;
@@ -828,8 +840,9 @@
     object-fit: contain;
   }
   
-  .product-detail .right span {
-    display: inline-block;
+  .product-detail .right{
+    display:flex;
+    flex-direction: column;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -848,7 +861,6 @@
   }
   
   .product-detail .right div {
-    display: inline-block;
     position: relative;
     z-index: 1;
   }
@@ -897,32 +909,12 @@
     text-transform: uppercase;
     margin: 2rem 0;
   }
-  
+   
+.hidden{
+  display:none;
+}
+
   @media only screen and (max-width: 996px) {
-    .product-detail .left {
-      width: 30rem;
-      height: 45rem;
-    }
-  
-    .product-detail .details {
-      gap: 3rem;
-    }
-  
-    .product-detail .thumbnails {
-      width: 30rem;
-      gap: 0.5rem;
-    }
-  
-    .product-detail .thumbnail {
-      width: auto;
-      height: 10rem;
-      background-color: #f6f2f1;
-      text-align: center;
-      padding: 0.5rem;
-    }
-  }
-  
-  @media only screen and (max-width: 650px) {
     .product-detail .details {
       grid-template-columns: 1fr;
     }
@@ -1136,3 +1128,207 @@
   .wrapper .profile_counts .profile_counts_wrap .item .title{
     font-size: 14px;
   }
+
+  .services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.services .box-container .box{
+    flex:1 1 30rem;
+    border-radius: .5rem;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border:.1rem solid rgba(0,0,0,.2);
+    text-align: center;
+    padding:2rem;
+}
+
+.services .box-container .box h3{
+    font-size: 2.5rem;
+    color:#243a6f;
+    padding-top: 12px;
+}
+
+.services .box-container .box p{
+    font-size: 2rem;
+    color:#666;
+    padding:.5rem 0;
+    line-height: 2;
+}
+
+#padding{
+  padding:2rem 9%;
+}
+
+@media (max-width:991px){
+  #padding{
+    padding:1.5rem;
+  }
+}
+
+.featured .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.featured .box-container .box{
+  border:.1rem solid rgba(0,0,0,.2);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  border-radius: .5rem;
+  overflow:hidden;
+  background:#fff;
+  flex:1 1 30rem;
+}
+
+.featured .box-container .box .image-container{
+  overflow:hidden;
+  position: relative;
+  width: 100%;
+  height: 25rem;
+}
+
+.featured .box-container .box .image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .2s linear;
+}
+
+.featured .box-container .box:hover .image-container img{
+  transform: scale(1.1);
+}
+
+.featured .box-container .box .image-container .info{
+  position: absolute;
+  top:1rem; left:0;
+  display: flex;
+}
+
+.featured .box-container .box .image-container .info h3{
+  font-weight: 500;
+  font-size: 1.4rem;
+  color:#fff;
+  background:rgba(0,0,0,.3);
+  border-radius: .5rem;
+  padding:.5rem 1.5rem;
+  margin-left: 1rem;
+}
+
+.featured .box-container .box .image-container .icons{
+  position: absolute;
+  bottom:1rem; right:0;
+  display: flex;
+}
+
+.featured .box-container .box .image-container .icons a{
+  font-size: 1.4rem;
+  color:#fff;
+  display: flex;
+  border-radius: .5rem;
+  background: rgba(0,0,0,.3);
+  margin-right: 1rem;
+  padding:.7rem;
+}
+
+.featured .box-container .box .image-container .icons a h3{
+  font-weight: 500;
+  padding-left: .5rem;
+}
+
+.featured .box-container .box .image-container .icons a:hover{
+  background:var(--red);
+}
+
+.featured .box-container .box .content{
+  padding:1.5rem;
+}
+
+.featured .box-container .box .content .price{
+  display: flex;
+  align-items: center;
+}
+
+.featured .box-container .box .content .price h3{
+  color:var(--red);
+  font-size: 2rem;
+  margin-right: auto;
+}
+
+.featured .box-container .box .content .price a{
+  color:#666;
+  font-size: 1.5rem;
+  margin-right: .5rem;
+  border-radius: .5rem;
+  height:4rem;
+  width:4rem;
+  line-height: 4rem;
+  text-align: center;
+  background:#f7f7f7;
+}
+
+.featured .box-container .box .content .price a:hover{
+  background:var(--red);
+  color:#fff;
+}
+
+.featured .box-container .box .content .location{
+  padding:1rem 0;
+}
+
+.featured .box-container .box .content .location h3{
+  font-size: 2.5rem;
+  color:#333;
+}
+
+.featured .box-container .box .content .location p{
+  font-size: 1.5rem;
+  color:#666;
+  line-height: 1.5;
+  padding-top: .5rem;
+}
+
+.featured .box-container .box .content .details{
+  padding:.5rem 0;
+  display: flex;
+}
+
+.featured .box-container .box .content .details h3{
+  flex:1;
+  padding:1rem;
+  border:.1rem solid rgba(0,0,0,.1);
+  color:#999;
+  font-size: 1.3rem;
+}
+
+.featured .box-container .box .content .details h3 i{
+  color:#333;
+  padding-left: .5rem;
+}
+
+.featured .box-container .box .content .buttons{
+  display: flex;
+}
+
+.featured .box-container .box .content .buttons .btn{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+@media (max-width:991px){
+.featured .box-container .box .content .buttons{
+  display: grid;
+}
+.featured .box-container .box .content .buttons .btn{
+  font-size: 1rem;
+}
+}
+
+@media (max-width:385px){
+  .featured .box-container .box .content .buttons .btn{
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,182 @@
+#heading{
+    text-align: center;
+    margin-top: 3.5%;
+    margin-left: 10.5%;
+    margin-right: 10.5%;
+    margin-bottom: 0%;
+    padding-bottom: 1.5%;
+    padding-top: 2%;
+    background-color: white;
+
+}
+body{
+    background-color: #d1e2e9;
+}
+
+.firstbox{
+    margin-bottom: 4px ;
+    margin-top: 0%;
+    margin-left: 10.5%;
+    margin-right: 10.5%;
+    padding: 3.5%;
+    padding-top: 1%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.firstelement{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}
+
+.dp{
+    display: flex;
+    justify-content: center;
+}
+
+.dp i{
+    font-size: 180px;
+}
+
+.details{
+    /* padding-top: 1.5%; */
+    padding-left: 0;
+}
+
+.info{
+    font-size: 16px;
+    font-weight: lighter;
+    margin-left: 3px;
+    text-transform: capitalize;
+}
+
+.secondbox{
+    background-color: white;
+    margin-left: 10.5%;
+    margin-right: 10.5%;
+    margin-bottom: 4%;
+    padding: 2%;
+}
+
+.secondbox h1{
+    margin-top: 1%;
+    margin-bottom: 0%;
+    text-align: center;
+}
+
+/* .bottomdetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+} */
+
+.bottomdetails p{
+    margin-top: 0%;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* .form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} */
+
+.aboveform{
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.input{
+    padding: 10px;
+    margin: 7px;
+    width: 40%;
+    /* border-radius: 5%; */
+}
+
+#address{
+    width: 84%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.submit{
+    display: block;
+    width: 75px;
+    margin: 7px;
+    padding: 8px;
+    height: 34px;
+}
+
+
+
+
+@media only screen and (max-width: 658px){
+
+    #heading{
+        margin-left: 4.5%;
+        margin-right: 4.5%;
+    }
+
+    .firstbox{
+        margin-left: 4.5%;
+        margin-right: 4.5%;
+    }
+
+    .secondbox{
+        margin-left: 4.5%;
+        margin-right: 4.5%;
+    }    
+}
+
+@media only screen and (max-width: 480px){
+
+    body{
+        font-size: 16px;
+    }
+
+    #heading{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .firstbox{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .secondbox{
+        margin-left: 0%;
+        margin-right: 0%;
+    }    
+}
+
+@media only screen and (max-width: 412px){
+
+    .input{
+        width: 84%;
+    }
+}

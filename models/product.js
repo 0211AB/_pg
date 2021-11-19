@@ -57,7 +57,7 @@ const productSchema = new mongoose.Schema({
     intime: { type: String },
     housekeeping: { type: String },
     drinkingwater: { type: String },
-    furniture: { type: String }
+    furniture: { type: String },
 })
 
 module.exports = mongoose.model('Product', productSchema);
