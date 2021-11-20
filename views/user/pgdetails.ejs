@@ -23,10 +23,9 @@
                         <h1 class="pgid">CornerDen #<%= product.idofpg %>
                         </h1>
                         <h4 class="gender" id=gender>
-                            <%= product.gender %>
+                            &nbsp;  <%= product.gender %>
                         </h4>
                     </div>
-                    <br>
                     <br>
                     <div class="tables">
 
@@ -195,7 +194,10 @@
 
 
                 <div class="details" id="refund"> <span class="detailfield"> Refund Policy:</span> <span
-                        id="security"><%= product.refundpolicy %></span> </div>
+                        id="security"></span>
+                    <%= product.refundpolicy %>
+                        </span>
+                </div>
 
 
             </div>

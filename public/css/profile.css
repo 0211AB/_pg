@@ -10,9 +10,17 @@
     justify-content:space-evenly;
 }
 
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .pgimages{
     /* width: 40%; */
     margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pgpic{
@@ -44,6 +52,7 @@
     justify-content:center;
     flex-direction: column;
     flex-wrap: wrap;
+    gap:2.3rem;
 }
 
 .amount{
@@ -78,20 +87,21 @@
       margin-bottom: 4%;
       display: flex;
       justify-content:start;
+      gap:5rem;
       flex-wrap: wrap;
   }
 
-  .block1{
-      padding-left: 7%;
+  .foodmenu{
+      padding-bottom: 2.3rem;
   }
-
-  .block2{
-      padding-left: 7%;
+ 
+  .foodmenu li{
+      list-style: disc;
+      margin-left: 2rem;
   }
 
   #refund{
       margin-bottom: 2.5%;
-      padding-left: 5%;
   }
 
   .detailfield{
@@ -139,7 +149,6 @@ form{
 }
 
 
-
   @media only screen and (max-width: 850px)
   {
       .firstbox{
@@ -156,7 +165,6 @@ form{
         margin-left: 2%;
         margin-right: 2%;
     }
-
   }
 
 
@@ -189,5 +197,8 @@ form{
 
     body{
         font-size: 16px;
+    }
+    .block2{
+        padding-left: 0;
     }
   }

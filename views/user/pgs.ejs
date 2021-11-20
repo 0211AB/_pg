@@ -24,13 +24,15 @@
                         <div class="product">
                             <div class="product-header">
                                 <img src="./images/pic2.jpg" alt="">
-                                <ul class="icons">
-                                    <span class="wishlist"><i class="bx bx-heart"></i> Wishlist</span>
-                                </ul>
                             </div>
                             <div class="product-footer">
-                                <h3>CornerDen#<%= product.idofpg %>
+                                <h3>CornerDig #<%= product.idofpg %>
                                 </h3>
+                                <div id="price">
+                                    <%= product.distancefromjusl %> mins from JU Salt Lake Campus <br>
+                                        <%= product.distancefromtechno %> mins from Techno India <br>
+                                            <%= product.distancefromiem %> mins from IEM
+                                </div>
                                 <form action="pgdetails" method="post"><span><input class="hidden"
                                             value="<%= product._id %>" name="id"></span><button type="submit"
                                         class="btn">Details</a></form>
