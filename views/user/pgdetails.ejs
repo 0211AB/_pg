@@ -11,7 +11,18 @@
 
 
                 <div class="pgimages">
-                    <img class="pgpic" src="images/sampleflat.png" alt="Photo of PG from backend">
+                    <div class="carousel-wrapper">
+                        <div class="carousel">
+                          <img class="carousel__photo initial" src="images/pic1.jpg">
+                          <img class="carousel__photo" src="images/pic2.jpg">
+                          <img class="carousel__photo" src="images/pic3.jpg">
+                          <img class="carousel__photo" src="images/pic4.jpg">
+                          <img class="carousel__photo" src="images/pic5.jpg">
+                            
+                          <div class="carousel__button--next"></div>
+                          <div class="carousel__button--prev"></div>
+                        </div>
+                      </div>
                 </div>
 
 
@@ -23,7 +34,7 @@
                         <h1 class="pgid">CornerDen #<%= product.idofpg %>
                         </h1>
                         <h4 class="gender" id=gender>
-                            &nbsp;  <%= product.gender %>
+                            &nbsp; <%= product.gender %>
                         </h4>
                     </div>
                     <br>
