@@ -17,10 +17,7 @@ router.get('/', (req, res) => {
 
 router.get('/account', auth, (req, res) => {
     const username = req.user.username
-    if (!username) {
-        res.render('user/login', { msg: "" })
-    }
-
+  
     User.findOne({ username }, (err, user) => {
         if (user) {
             res.render('user/account', { user })
@@ -108,7 +105,7 @@ router.post('/signup', async (req, res) => {
     const user = new User(req.body)
     await user.save()
 
-    res.redirect('login')
+    res.render('user/login',{msg: "User Created Succesfully! Please Login"})
 })
 
 module.exports = router
