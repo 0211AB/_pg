@@ -1,0 +1,85 @@
+
+.title{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 5px 20px;
+    margin-bottom: 30px;
+}
+
+img{
+    max-width: 150px;
+    max-height: 150px;
+}
+/* .section{
+    display: flex;
+    justify-content: space-evenly;
+} */
+.firstbox{
+    /* background-color: teal; */
+    min-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.secondbox{
+    /* background-color: turquoise; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    min-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.table , .chair , .bed , .mattress{
+    padding: 30px 50px;
+    border: solid rgba(0, 0, 0, 0.199) 1px;
+    border-radius: 10%;
+    margin-bottom: 5%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+@media only screen and (max-width: 425px)
+{
+    .title{
+        width: auto
+    }
+
+    .firstbox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondbox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 426px)
+{
+    body{
+        font-size: 18px;
+    }
+
+    .table:hover, .chair:hover , .bed:hover , .mattress:hover{
+        background-color: gray;
+    }
+}
+
+
+  .button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+  }
