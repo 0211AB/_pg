@@ -73,6 +73,11 @@ router.get('/amenities', (req, res) => {
     res.render('user/amenities')
 })
 
+router.get('/comingsoon', (req, res) => {
+    res.render('user/comingsoon')
+})
+
+
 
 router.post('/login', (req, res) => {
     const username = req.body.username

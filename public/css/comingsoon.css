@@ -1,0 +1,45 @@
+section{
+    background: url(../images/06.jpg) 50% 50%;
+    background-size:cover;
+    padding:20px;
+  }
+
+  .containerx{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    width: 100%;
+    min-height: 90vh;
+    text-align: center;
+  }
+  .containerx h1{
+    color:black;
+    font-weight:600;
+    text-transform: uppercase;
+    margin: 0px;
+    letter-spacing: 10px;
+  }
+  .containerx h2{
+    color:black;
+    font-weight:600;
+    margin: 0;
+  }
+  .count{
+    margin: 40px 0;
+  }
+  .countd{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2px solid;
+    margin: 0 30px;
+    font-size: 12px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .countd span{
+    display: block;
+    font-size: 26px;
+    margin-top: 14px;
+  }
