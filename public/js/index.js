@@ -3,7 +3,7 @@ const navOpen = document.querySelector(".hamburger");
 const navClose = document.querySelector(".close");
 
 
-window.addEventListener("DomContentLoaded", () => {
+window.addEventListener('load', (event) => {
   let userAgentString =
     navigator.userAgent;
 
