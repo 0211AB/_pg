@@ -473,6 +473,11 @@
   .product-footer h3 {
     font-size: 2.2rem;
   }
+
+  .product-footer h3 span{
+    font-size: 1.5rem;
+    text-transform:uppercase;
+  }
   
   
   .product-footer #price {
@@ -1138,10 +1143,6 @@
 
 .services .box-container .box{
     flex:1 1 30rem;
-    border-radius: .5rem;
-    background:#fff;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-    border:.1rem solid rgba(0,0,0,.2);
     text-align: center;
     padding:2rem;
 }

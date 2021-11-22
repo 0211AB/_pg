@@ -13,11 +13,11 @@
                 <div class="pgimages">
                     <div class="carousel-wrapper">
                         <div class="carousel">
-                          <img class="carousel__photo initial" src="images/pic1.jpg">
-                          <img class="carousel__photo" src="images/pic2.jpg">
-                          <img class="carousel__photo" src="images/pic3.jpg">
-                          <img class="carousel__photo" src="images/pic4.jpg">
-                          <img class="carousel__photo" src="images/pic5.jpg">
+                          <img class="carousel__photo initial" src="<%= product.pic1 %>">
+                          <img class="carousel__photo" src="<%= product.pic2 %>">
+                          <img class="carousel__photo" src="<%= product.pic3 %>">
+                          <img class="carousel__photo" src="<%= product.pic4 %>">
+                          <img class="carousel__photo" src="<%= product.pic2 %>">
                             
                           <div class="carousel__button--next"></div>
                           <div class="carousel__button--prev"></div>
@@ -31,7 +31,7 @@
 
 
                     <div class="heading">
-                        <h1 class="pgid">CornerDen #<%= product.idofpg %>
+                        <h1 class="pgid">CornerDig #<%= product.idofpg %>
                         </h1>
                         <h4 class="gender" id=gender>
                             &nbsp; <%= product.gender %>

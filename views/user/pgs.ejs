@@ -23,10 +23,12 @@
                     <% products.forEach((product)=>{ %>
                         <div class="product">
                             <div class="product-header">
-                                <img src="./images/pic2.jpg" alt="">
+                                <img src="<%= product.pic1 %>" alt="">
                             </div>
                             <div class="product-footer">
-                                <h3>CornerDig #<%= product.idofpg %>
+                                <h3>CornerDig #<%= product.idofpg %>&nbsp; <span>
+                                            <%= product.gender %>
+                                        </span>
                                 </h3>
                                 <div id="price">
                                     <%= product.distancefromjusl %> mins from JU Salt Lake Campus <br>

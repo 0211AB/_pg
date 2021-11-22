@@ -58,6 +58,10 @@ const productSchema = new mongoose.Schema({
     housekeeping: { type: String },
     drinkingwater: { type: String },
     furniture: { type: String },
+    pic1: { type: String },
+    pic2: { type: String },
+    pic3: { type: String },
+    pic4: { type: String }
 })
 
 module.exports = mongoose.model('Product', productSchema);
