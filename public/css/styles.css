@@ -442,7 +442,7 @@
   }
   
   .product {
-    height: 55rem;
+    height: 60rem;
     background-color: #fff;
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
     border-radius: 1rem;
@@ -495,7 +495,7 @@
     }
 
     .product {
-      height:40rem;
+      height:43rem;
     }
     
   }
@@ -1208,15 +1208,11 @@
   height: 25rem;
 }
 
-.featured .box-container .box .image-container img{
+.featured .box-container .box .image-container iframe{
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: .2s linear;
-}
-
-.featured .box-container .box:hover .image-container img{
-  transform: scale(1.1);
 }
 
 .featured .box-container .box .image-container .info{
