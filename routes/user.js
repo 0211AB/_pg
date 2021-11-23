@@ -1,151 +1,33 @@
 const express = require('express')
 const router = new express.Router()
-const Flat = require('../models/flats')
-const User = require('../models/user')
-const Product = require('../models/product')
-const bcrypt = require('bcrypt')
+const usercontroller = require('../controllers/user')
 const auth = require('../middleware/userauth')
 
 
-router.get('/', (req, res) => {
-    Product.find({ $or: [{ 'idofpg': "13" }, { 'idofpg': "1" }] }, async (err, products) => {
-        Flat.find(async (err, flats) => {
-            res.render('user/homepage', { products, flats })
-        }).limit(3)
-    }).limit(2)
-})
+router.get('/', usercontroller.home)
 
-router.get('/account', auth, (req, res) => {
-    const username = req.user.username
+router.get('/account', auth, usercontroller.getaccount)
 
-    User.findOne({ username }, (err, user) => {
-        if (user) {
-            res.render('user/account', { user })
-        }
-    })
-})
+router.post('/account', auth, usercontroller.postaccount)
 
-router.post('/account', auth, (req, res) => {
-    const username = req.user.username
-    User.findOne({ username }).exec()
-        .then(async (user) => {
-            user.college = req.body.college
-            user.dob = req.body.dob
-            user.dept = req.body.dept
-            user.gradyear = req.body.gradyear
-            user.altnumber = req.body.altnumber
-            user.address = req.body.address
-            user.email = req.body.email
-            user.extradetails = true
-            await user.save()
-            res.render('user/account', { user })
-        })
-})
+router.post('/pgdetails', usercontroller.postpgdetails)
 
-router.post('/pgdetails', (req, res) => {
-    Product.findById(req.body.id, async (err, product) => {
-        res.render('user/pgdetails', { product })
+router.get('/pgs', usercontroller.pgs)
 
-    })
-})
+router.get('/pgdetails', usercontroller.getpgdetails)
 
-router.get('/pgs', (req, res) => {
-    const sortx = req.query.sort
+router.get('/flats', usercontroller.flats)
 
-    if (sortx == "tocost") {
-        Product.find(async (err, products) => {
-            res.render('user/pgs', { products })
-        }).sort(sortx)
-    }
-    else if (sortx == "gender") {
-        Product.find({ gender: "Girls" }, async (err, products) => {
-            res.render('user/pgs', { products })
-        })
-    }
-    else if (sortx == "genderm") {
-        Product.find({ gender: "Boys" }, async (err, products) => {
-            res.render('user/pgs', { products })
-        })
-    }
-    else {
-        Product.find(async (err, products) => {
-            res.render('user/pgs', { products })
-        })
+router.get('/login', usercontroller.login)
 
-    }
+router.get('/amenities', usercontroller.amenities)
 
+router.get('/comingsoon', usercontroller.comingsoon)
 
-})
+router.post('/login', usercontroller.postlogin)
 
-router.get('/pgdetails', (req, res) => {
-    res.render('user/pgdetails')
-})
+router.post('/signup', usercontroller.signup)
 
-router.get('/flats', (req, res) => {
-    Flat.find({}).then((flats) => {
-        res.render('user/flats', { flats })
-    })
-})
-
-router.get('/login', (req, res) => {
-    res.render('user/login', { msg: "" })
-})
-
-router.get('/amenities', (req, res) => {
-    res.render('user/amenities')
-})
-
-router.get('/comingsoon', (req, res) => {
-    res.render('user/comingsoon')
-})
-
-
-
-router.post('/login', (req, res) => {
-    const username = req.body.username
-    const password = req.body.password
-
-    //find user exist or not
-    User.findOne({ username }).exec()
-        .then(user => {
-            //if user not exist than return status 400
-            if (!user) return res.status(400).render('user/login', { msg: 'User does not exist !! Please sign up' })
-
-            //if user exist than compare password
-            //password comes from the user
-            //user.password comes from the database
-            bcrypt.compare(password, user.password, async (err, data) => {
-                //if error than throw error
-                if (err) return res.status(400).render('user/login', { msg: 'Incorrect Credentials' })
-
-                //if both match than you can do anything
-                if (data) {
-                    const token = await user.generateAuthToken()
-                    res.cookie('auth_token', token)
-                    res.redirect('account')
-                }
-                else {
-                    return res.status(400).render('user/login', { msg: 'Incorrect Credentials' })
-                }
-
-            })
-
-        })
-})
-
-router.post('/signup', async (req, res) => {
-    const user = new User(req.body)
-    await user.save()
-
-    res.render('user/login', { msg: "User Created Succesfully! Please Login" })
-})
-
-router.post('/pgsort', async (req, res) => {
-    console.log(req.body.sort)
-
-    res.redirect('pgs', {
-        sort: req.body.sort
-    })
-})
+router.post('/pgsort', usercontroller.pgsort)
 
 module.exports = router
