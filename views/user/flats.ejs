@@ -15,7 +15,7 @@
                     <% flats.forEach(function(flat){ %>
                         <div class="box">
                             <div class="image-container">
-                                <img src="images/img-1.jpg" alt="">
+                                <img src="<%= flat.pic1 %>" alt="">
                             </div>
                             <div class="content">
                                 <div class="price">
@@ -52,3 +52,11 @@
                 </div>
             </section>
             <%- include('includes/end.ejs') %>
+            
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<!-- Custom Script -->
+<script src="js/index.js"></script>
+</body>
+
+</html>

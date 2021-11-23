@@ -93,19 +93,7 @@
                 <% flats.forEach((flat)=>{ %>
                     <div class="box">
                         <div class="image-container">
-                            <div class="carousel-wrapper">
-                                <div class="carousel">
-                                    <img class="carousel__photo initial" src="<%= flat.pic1 %>">
-                                    <img class="carousel__photo" src="<%= flat.pic2 %>">
-                                    <img class="carousel__photo" src="<%= flat.pic3 %>">
-                                    <img class="carousel__photo" src="<%= flat.pic4 %>">
-                                    <img class="carousel__photo" src="<%= flat.pic5 %>">
-                                    <img class="carousel__photo" src="<%= flat.pic6 %>">
-
-                                    <div class="carousel__button--next"></div>
-                                    <div class="carousel__button--prev"></div>
-                                </div>
-                            </div>
+                            <img src="<%= flat.pic1 %>" alt="" srcset="">
                         </div>
                         <div class="content">
                             <div class="price">
@@ -164,3 +152,11 @@
             </div>
         </section>
         <%- include('includes/end.ejs') %>
+        
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<!-- Custom Script -->
+<script src="js/index.js"></script>
+</body>
+
+</html>

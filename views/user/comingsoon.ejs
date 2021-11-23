@@ -5,33 +5,62 @@
 
     <body>
         <%- include('includes/nav.ejs') %>
-        <section>
-            <div class="containerx">
-                <h1>KITCHEN SERVICES</h1>
-                <h2>Coming soon...</h2>
+            <section>
+                <div class="containerx">
+                    <h1>KITCHEN SERVICES</h1>
+                    <h2>Coming soon...</h2>
 
-                <div class="count">
-                    <div class="countd">
-                        <span id="days">00</span>
-                        DAYS
-                    </div>
+                    <div class="count">
+                        <div class="countd">
+                            <span id="days">00</span>
+                            DAYS
+                        </div>
 
-                    <div class="countd">
-                        <span id="hours">00</span>
-                        HOURS
-                    </div>
+                        <div class="countd">
+                            <span id="hours">00</span>
+                            HOURS
+                        </div>
 
-                    <div class="countd">
-                        <span id="minutes">00</span>
-                        MINUTES
-                    </div>
+                        <div class="countd">
+                            <span id="minutes">00</span>
+                            MINUTES
+                        </div>
 
-                    <div class="countd">
-                        <span id="seconds">00</span>
-                        SECONDS
+                        <div class="countd">
+                            <span id="seconds">00</span>
+                            SECONDS
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
             <%- include('includes/end.ejs') %>
+
+                <!-- GSAP -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+                <!-- Custom Script -->
+                <script src="js/index.js"></script>
+                <script>
+                    var count = new Date("dec 31,2021 00:01:00").getTime();
+                    var x = setInterval(function () {
+                        var now = new Date().getTime();
+                        var d = count - now;
+
+                        var days = Math.floor(d / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((d % (1000 * 60)) / 1000);
+
+                        document.getElementById("days").innerHTML = days;
+                        document.getElementById("hours").innerHTML = hours;
+                        document.getElementById("minutes").innerHTML = minutes;
+                        document.getElementById("seconds").innerHTML = seconds;
+
+                        if (d <= 0) {
+                            clearInterval(x);
+                        }
+                    }, 1000);
+                </script>
+    </body>
+
+    </html>

@@ -29,5 +29,5 @@ app.use(userRoutes)
 
 
 app.listen(port, (req, res) => {
-    console.log("Running on port" + port)
+    console.log("Running on port " + port)
 })

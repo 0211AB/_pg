@@ -94,26 +94,6 @@ links.map(link => {
   });
 });
 
-var count = new Date("dec 31,2021 00:01:00").getTime();
-var x = setInterval(function () {
-  var now = new Date().getTime();
-  var d = count - now;
-
-  var days = Math.floor(d / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((d % (1000 * 60)) / 1000);
-
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-
-  if (d <= 0) {
-    clearInterval(x);
-  }
-}, 1000);
-
 gsap.from(".logo", { opacity: 0, duration: 1, delay: 0.5, y: -10 });
 gsap.from(".hero-img", { opacity: 0, duration: 1, delay: 1.5, x: -200 });
 gsap.from(".hero-content h2", { opacity: 0, duration: 1, delay: 2, y: -50 });
