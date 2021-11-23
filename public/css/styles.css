@@ -777,6 +777,12 @@
     z-index: 1;
   }
 
+  @media only screen and (max-width: 450px){
+    .section .top {
+      flex-direction: column;
+    }
+  }
+
   
   @media only screen and (max-width: 768px) {
     .all-products .top select {

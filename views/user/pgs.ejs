@@ -9,14 +9,15 @@
 
                 <div class="top container">
                     <h1>All PGs</h1>
-                    <%# <form>
-                        <select>
-                            <option value="1">Defualt Sorting</option>
-                            <option value="2">Female Pgs only</option>
-                            <option value="3">Sort By Price</option>
-                            <option value="4">Sort By location</option>
+                    <form method="get" action="pgs">
+                        <select name="sort" id="sort">
+                            <option value="">Defualt Sorting</option>
+                            <option value="gender">Female Pgs only</option>
+                            <option value="genderm">Male Pgs only</option>
+                            <option value="tocost">Sort By Price</option>
                         </select>
-                        </form> %>
+                        <input type="submit" class="btn" value="Go" />
+                    </form>
                 </div>
 
                 <div class="product-center container">

@@ -50,9 +50,31 @@ router.post('/pgdetails', (req, res) => {
 })
 
 router.get('/pgs', (req, res) => {
-    Product.find(async (err, products) => {
-        res.render('user/pgs', { products })
-    })
+    const sortx = req.query.sort
+
+    if (sortx == "tocost") {
+        Product.find(async (err, products) => {
+            res.render('user/pgs', { products })
+        }).sort(sortx)
+    }
+    else if (sortx == "gender") {
+        Product.find({ gender: "Girls" }, async (err, products) => {
+            res.render('user/pgs', { products })
+        })
+    }
+    else if (sortx == "genderm") {
+        Product.find({ gender: "Boys" }, async (err, products) => {
+            res.render('user/pgs', { products })
+        })
+    }
+    else {
+        Product.find(async (err, products) => {
+            res.render('user/pgs', { products })
+        })
+
+    }
+
+
 })
 
 router.get('/pgdetails', (req, res) => {
@@ -116,6 +138,14 @@ router.post('/signup', async (req, res) => {
     await user.save()
 
     res.render('user/login', { msg: "User Created Succesfully! Please Login" })
+})
+
+router.post('/pgsort', async (req, res) => {
+    console.log(req.body.sort)
+
+    res.redirect('pgs', {
+        sort: req.body.sort
+    })
 })
 
 module.exports = router

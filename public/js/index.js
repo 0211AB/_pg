@@ -2,7 +2,7 @@ const menu = document.querySelector(".menu");
 const navOpen = document.querySelector(".hamburger");
 const navClose = document.querySelector(".close");
 
-
+form.options.toArray
 window.addEventListener('load', (event) => {
   let userAgentString =
     navigator.userAgent;
