@@ -8,7 +8,7 @@ const auth = require('../middleware/userauth')
 
 
 router.get('/', (req, res) => {
-    Product.find(async (err, products) => {
+    Product.find({ id: 13, id: 1 }, async (err, products) => {
         Flat.find(async (err, flats) => {
             res.render('user/homepage', { products, flats })
         }).limit(2)
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.get('/account', auth, (req, res) => {
     const username = req.user.username
-  
+
     User.findOne({ username }, (err, user) => {
         if (user) {
             res.render('user/account', { user })
@@ -115,7 +115,7 @@ router.post('/signup', async (req, res) => {
     const user = new User(req.body)
     await user.save()
 
-    res.render('user/login',{msg: "User Created Succesfully! Please Login"})
+    res.render('user/login', { msg: "User Created Succesfully! Please Login" })
 })
 
 module.exports = router

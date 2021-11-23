@@ -730,6 +730,10 @@
     font-weight: 400;
     margin-bottom: 1rem;
   }
+
+  #br{
+    display:none;
+  }
   
   @media only screen and (max-width: 998px) {
     .footer-container {
@@ -742,6 +746,12 @@
     .footer-container {
       grid-template-columns: 1fr;
       row-gap: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 371px){
+    #br{
+      display: inherit;
     }
   }
   
