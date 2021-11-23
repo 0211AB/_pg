@@ -1,5 +1,6 @@
 <%- include('includes/head.ejs') %>
     <title>CORNERSTONE</title>
+    <link rel="stylesheet" href="css/profile.css" />
     </head>
 
     <body>
@@ -60,13 +61,13 @@
                             <h3>CornerDig <%= product.idofpg %>&nbsp; <span>
                                         <%= product.gender %>
                                     </span>
-                                    
+
                             </h3>
                             <div id="price">
                                 Rs<%=product.tocost %> onwards<br><br>
-                                <%= product.distancefromjusl %> mins from JU Salt Lake Campus <br>
-                                    <%= product.distancefromtechno %> mins from Techno India <br>
-                                        <%= product.distancefromiem %> mins from IEM
+                                    <%= product.distancefromjusl %> mins from JU Salt Lake Campus <br>
+                                        <%= product.distancefromtechno %> mins from Techno India <br>
+                                            <%= product.distancefromiem %> mins from IEM
                             </div>
                             <form action="pgdetails" method="post"><span><input class="hidden"
                                         value="<%= product._id %>" name="id"></span><button type="submit"
@@ -92,10 +93,19 @@
                 <% flats.forEach((flat)=>{ %>
                     <div class="box">
                         <div class="image-container">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/AQM8ejmo2f4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                            <div class="carousel-wrapper">
+                                <div class="carousel">
+                                    <img class="carousel__photo initial" src="<%= flat.pic1 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic2 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic3 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic4 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic5 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic6 %>">
+
+                                    <div class="carousel__button--next"></div>
+                                    <div class="carousel__button--prev"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="content">
                             <div class="price">

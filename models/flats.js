@@ -21,7 +21,13 @@ const flatSchema = new mongoose.Schema({
     },
     distancefromjusl: { type: String },
     distancefromiem: { type: String },
-    distancefromtechno: { type: String }
+    distancefromtechno: { type: String },
+    pic1: { type: String },
+    pic2: { type: String },
+    pic3: { type: String },
+    pic4: { type: String },
+    pic5: { type: String },
+    pic6: { type: String }
 })
 
 module.exports = mongoose.model('Flat', flatSchema)
