@@ -8,7 +8,7 @@ const auth = require('../middleware/userauth')
 
 
 router.get('/', (req, res) => {
-    Product.find({ id: 13, id: 1 }, async (err, products) => {
+    Product.find({ $or: [{ 'idofpg': "13" }, { 'idofpg': "1" }] }, async (err, products) => {
         Flat.find(async (err, flats) => {
             res.render('user/homepage', { products, flats })
         }).limit(2)
