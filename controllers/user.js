@@ -137,3 +137,11 @@ exports.pgsort = async (req, res) => {
         sort: req.body.sort
     })
 }
+
+exports.flatdetails = (req, res) => {
+    const id = req.body.id
+
+    Flat.findById(id).then((flat) => {
+        res.render('user/flatdetails', { flat })
+    })
+}

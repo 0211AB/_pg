@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Box icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" type="text/css" href="css/style-flatdetails.css" />
+    <link href="css/profile.css" rel="stylesheet">
+    <title>Flat Details</title>
+    
+    </head>
+
+    <body>
+        <%- include('includes/nav.ejs') %>
+
+            <!--Flats -->
+            <section class="section featured" id="padding">
+                
+
+                <div class="box-container">
+                    <div class="box">
+                        <div class="image-container">
+                            <div class="carousel-wrapper">
+                                <div class="carousel">
+                                    <img class="carousel__photo initial" src="<%= flat.pic1 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic2 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic3 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic4 %>">
+                                    <img class="carousel__photo" src="<%= flat.pic5 %>">
+                                </div>
+                                <div class="carousel__button--next"></div>
+                                <div class="carousel__button--prev"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="title">
+                                <h1>Flat Details</h1>
+                            </div>
+                            <div class="price">
+                                <h3>Rs<%=flat.Cost %>/mo</h3>
+                            </div>
+                            <div class="location">
+                                <h3>CornerDen <%=flat.idofflat %>
+                                </h3>
+                                <p>
+                                    <%=flat.distancefromjusl %> mins distace from JUSL
+                                </p>
+                                <p>
+                                    <%=flat.distancefromiem %> mins distace from IEM
+                                </p>
+                                <p>
+                                    <%=flat.distancefromtechno %> mins distace from TECHNO INDIA
+                                </p>
+                            </div>
+                            <div class="details">
+                                <h3> <i class="fas fa-expand"></i>
+                                    <%=flat.floor %> Floor
+                                </h3>
+                                <h3> <i class="fas fa-bed"></i>
+                                    <%=flat.bhk %>
+                                </h3>
+                            </div>
+                            <div class="buttons">
+                                <a href="https://wa.me/message/XMULBPYDLI5UP1" class="btn">Whatsapp</a>
+                                <a href="tel:+91-8100358606" class="btn">Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <%- include('includes/end.ejs') %>
+
+                <!-- GSAP -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+                <!-- Custom Script -->
+                <script src="js/index.js"></script>
+                <script src="js/wishlist.js"></script>
+    </body>
+
+    </html>

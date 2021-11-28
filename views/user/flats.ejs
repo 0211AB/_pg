@@ -16,6 +16,12 @@
                         <div class="box">
                             <div class="image-container">
                                 <img src="<%= flat.pic1 %>" alt="">
+                                <ul class="icons">
+                                    <form action="flatdetails" method="post">
+                                        <input type="hidden" name="id" value="<%= flat._id %>">
+                                        <input type="submit" class="btn" value="More Images">
+                                    </form>
+                                </ul>
                             </div>
                             <div class="content">
                                 <div class="price">
@@ -52,11 +58,11 @@
                 </div>
             </section>
             <%- include('includes/end.ejs') %>
-            
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<!-- Custom Script -->
-<script src="js/index.js"></script>
-</body>
 
-</html>
+                <!-- GSAP -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+                <!-- Custom Script -->
+                <script src="js/index.js"></script>
+    </body>
+
+    </html>

@@ -30,4 +30,6 @@ router.post('/signup', usercontroller.signup)
 
 router.post('/pgsort', usercontroller.pgsort)
 
+router.post('/flatdetails', usercontroller.flatdetails)
+
 module.exports = router
