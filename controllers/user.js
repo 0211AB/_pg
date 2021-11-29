@@ -48,7 +48,7 @@ exports.pgs = (req, res) => {
     const sortx = req.query.sort
 
     if (sortx == "tocost") {
-        Product.find(async (err, products) => {
+        Product.find( (err, products) => {
             res.render('user/pgs', { products })
         }).sort(sortx)
     }
