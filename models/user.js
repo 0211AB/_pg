@@ -14,40 +14,40 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    number:{
-        type:String,
-        required:true,
+    number: {
+        type: String,
+        required: true,
     },
-    gender:{
-        type:String,
-        required:true,
+    gender: {
+        type: String,
+        required: true,
     },
-    extradetails:{
-        type:Boolean,
+    extradetails: {
+        type: Boolean,
     },
-    dob:{
-        type:String
+    dob: {
+        type: String
     },
-    college:{
-        type:String
+    college: {
+        type: String
     },
-    dept:{
-        type:String
+    dept: {
+        type: String
     },
-    altnumber:{
-        type:String
+    altnumber: {
+        type: String
     },
-    gradyear:{
-        type:String
+    gradyear: {
+        type: String
     },
-    email:{
-        type:String
+    email: {
+        type: String
     },
-    address:{
-        type:String
+    address: {
+        type: String
     },
-    wishlisted:{
-        type:Array
+    wishlisted: {
+        type: Array
     }
 })
 
@@ -55,7 +55,7 @@ const userSchema = new mongoose.Schema({
 userSchema.pre("save", function (next) {
     const user = this
 
-    bcrypt.genSalt(10, function (saltError, salt) {
+    bcrypt.genSalt(10, (saltError, salt) => {
         if (saltError) {
             return next(saltError)
         } else {
@@ -63,7 +63,6 @@ userSchema.pre("save", function (next) {
                 if (hashError) {
                     return next(hashError)
                 }
-
                 user.password = hash
                 next()
             })

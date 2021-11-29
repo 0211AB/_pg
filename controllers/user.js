@@ -15,9 +15,12 @@ exports.getaccount = (req, res) => {
 
     User.findOne({ username })
         .then((user) => {
+            if(user)
             res.render('user/account', { user })
+            else
+            res.render('user/login')
         })
-        .catch(err => {
+        .catch((err) => {
             res.render('user/login')
         })
 }
@@ -140,9 +143,12 @@ exports.postlogin = (req, res) => {
 }
 
 exports.signup = (req, res) => {
+    console.log(req.body)
     const user = new User(req.body)
+    console.log(user)
     user.save()
         .then(() => {
+            console.log('In Then:',user)
             res.render('user/login', { msg: "User Created Succesfully! Please Login" })
         })
         .catch((e) => {
