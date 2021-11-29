@@ -233,7 +233,7 @@ form{
     top:0;
     width: 100%;
     margin: auto;
-    padding: 1rem 4rem;
+    padding: 1rem 0rem;
     z-index: 100;
     transition: transform .5s, opacity .5s, z-index .5s;
   }
@@ -262,7 +262,6 @@ form{
   top:50%;
   width: 3rem;
   height: 3rem;
-  background-color: #FFF;
   transform: translateY(-50%);
   border-radius: 50%;
   cursor: pointer; 
