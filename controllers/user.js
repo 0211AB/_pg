@@ -18,10 +18,10 @@ exports.getaccount = (req, res) => {
             if(user)
             res.render('user/account', { user })
             else
-            res.render('user/login')
+            res.render('user/login',{msg:""})
         })
         .catch((err) => {
-            res.render('user/login')
+            res.render('user/login',{msg:""})
         })
 }
 
