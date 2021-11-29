@@ -3,28 +3,29 @@ const User = require('../models/user')
 const Product = require('../models/product')
 const bcrypt = require('bcrypt')
 
-exports.home = (req, res) => {
-    Product.find({ $or: [{ 'idofpg': "13" }, { 'idofpg': "1" }] }, async (err, products) => {
-        Flat.find(async (err, flats) => {
-            res.render('user/homepage', { products, flats })
-        }).limit(3)
-    }).limit(2)
+exports.home = async (req, res) => {
+    const products = await Product.find({ $or: [{ 'idofpg': "13" }, { 'idofpg': "1" }] }).limit(2)
+    const flats = await Flat.find().limit(3)
+
+    res.render('user/homepage', { products, flats })
 }
 
 exports.getaccount = (req, res) => {
     const username = req.user.username
 
-    User.findOne({ username }, (err, user) => {
-        if (user) {
+    User.findOne({ username })
+        .then((user) => {
             res.render('user/account', { user })
-        }
-    })
+        })
+        .catch(err => {
+            res.render('user/login')
+        })
 }
 
 exports.postaccount = (req, res) => {
     const username = req.user.username
     User.findOne({ username }).exec()
-        .then(async (user) => {
+        .then((user) => {
             user.college = req.body.college
             user.dob = req.body.dob
             user.dept = req.body.dept
@@ -33,39 +34,53 @@ exports.postaccount = (req, res) => {
             user.address = req.body.address
             user.email = req.body.email
             user.extradetails = true
-            await user.save()
+            return user.save()
+        })
+        .then((user) => {
             res.render('user/account', { user })
+        })
+        .catch((e) => {
+            console.log(e)
         })
 }
 
+
 exports.postpgdetails = (req, res) => {
-    Product.findById(req.body.id, async (err, product) => {
-        res.render('user/pgdetails', { product })
-    })
+    Product.findById(req.body.id)
+        .then((product) => {
+            res.render('user/pgdetails', { product })
+        })
+        .catch((e) => {
+            console.log(e)
+        })
 }
 
 exports.pgs = (req, res) => {
     const sortx = req.query.sort
 
     if (sortx == "tocost") {
-        Product.find( (err, products) => {
-            res.render('user/pgs', { products })
-        }).sort(sortx)
+        Product.find({}).sort(sortx)
+            .then((products) => {
+                res.render('user/pgs', { products })
+            })
     }
     else if (sortx == "gender") {
-        Product.find({ gender: "Girls" }, async (err, products) => {
-            res.render('user/pgs', { products })
-        })
+        Product.find({ gender: "Girls" })
+            .then((products) => {
+                res.render('user/pgs', { products })
+            })
     }
     else if (sortx == "genderm") {
-        Product.find({ gender: "Boys" }, async (err, products) => {
-            res.render('user/pgs', { products })
-        })
+        Product.find({ gender: "Boys" })
+            .then((products) => {
+                res.render('user/pgs', { products })
+            })
     }
     else {
-        Product.find(async (err, products) => {
-            res.render('user/pgs', { products })
-        })
+        Product.find({})
+            .then((products) => {
+                res.render('user/pgs', { products })
+            })
     }
 }
 
@@ -74,9 +89,10 @@ exports.getpgdetails = (req, res) => {
 }
 
 exports.flats = (req, res) => {
-    Flat.find({}).then((flats) => {
-        res.render('user/flats', { flats })
-    })
+    Flat.find({})
+        .then((flats) => {
+            res.render('user/flats', { flats })
+        })
 }
 
 exports.login = (req, res) => {
@@ -123,11 +139,15 @@ exports.postlogin = (req, res) => {
         })
 }
 
-exports.signup = async (req, res) => {
+exports.signup = (req, res) => {
     const user = new User(req.body)
-    await user.save()
-
-    res.render('user/login', { msg: "User Created Succesfully! Please Login" })
+    user.save()
+        .then(() => {
+            res.render('user/login', { msg: "User Created Succesfully! Please Login" })
+        })
+        .catch((e) => {
+            console.log(e)
+        })
 }
 
 exports.pgsort = async (req, res) => {
@@ -141,7 +161,8 @@ exports.pgsort = async (req, res) => {
 exports.flatdetails = (req, res) => {
     const id = req.body.id
 
-    Flat.findById(id).then((flat) => {
-        res.render('user/flatdetails', { flat })
-    })
+    Flat.findById(id)
+        .then((flat) => {
+            res.render('user/flatdetails', { flat })
+        })
 }

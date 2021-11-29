@@ -258,6 +258,7 @@ form{
 
 .carousel__button--prev,
 .carousel__button--next {
+  margin:0 1rem;
   position: absolute;
   top:50%;
   width: 3rem;
