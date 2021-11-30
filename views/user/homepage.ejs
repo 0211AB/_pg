@@ -94,6 +94,12 @@
                     <div class="box">
                         <div class="image-container">
                             <img src="<%= flat.pic1 %>" alt="" srcset="">
+                            <ul class="icons">
+                                <form action="flatdetails" method="post">
+                                    <input type="hidden" name="id" value="<%= flat._id %>">
+                                    <input type="submit" class="btn" value="More Images">
+                                </form>
+                            </ul>
                         </div>
                         <div class="content">
                             <div class="price">

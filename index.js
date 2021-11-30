@@ -6,10 +6,7 @@ const cookieParser = require('cookie-parser')
 
 require('dotenv').config()
 
-mongoose.connect(process.env.MONGO_URL/*, {
-    newUrlParser: true,
-    useCreateIndex: true
-}*/)
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("Database Connected"))
     .catch(console.error)
 

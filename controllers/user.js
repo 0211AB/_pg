@@ -143,12 +143,9 @@ exports.postlogin = (req, res) => {
 }
 
 exports.signup = (req, res) => {
-    console.log(req.body)
     const user = new User(req.body)
-    console.log(user)
     user.save()
         .then(() => {
-            console.log('In Then:',user)
             res.render('user/login', { msg: "User Created Succesfully! Please Login" })
         })
         .catch((e) => {
