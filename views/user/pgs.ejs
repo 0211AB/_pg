@@ -32,9 +32,10 @@
                                         </span>
                                 </h3>
                                 <div id="price">
-                                    <%= product.distancefromjusl %> mins from JU Salt Lake Campus <br>
-                                        <%= product.distancefromtechno %> mins from Techno India <br>
-                                            <%= product.distancefromiem %> mins from IEM
+                                    Rs<%=product.tocost %> onwards<br><br>
+                                        <%= product.distancefromjusl %> mins from JU Salt Lake Campus <br>
+                                            <%= product.distancefromtechno %> mins from Techno India <br>
+                                                <%= product.distancefromiem %> mins from IEM
                                 </div>
                                 <form action="pgdetails" method="post"><span><input class="hidden"
                                             value="<%= product._id %>" name="id"></span><button type="submit"
