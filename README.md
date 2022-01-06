@@ -1,7 +1,8 @@
 
-<h1 align="center" font-weight="bold"> CornerStone PG </h1>
+<h1 align="center" font-weight="bold"> CornerStone PG</h1>
 
-<p align="center">Website built for CornerStone Properties which aims to revolutionise the flats renting and PG ecosystem for travelling students.</p>
+
+<p align="center">Website built for CornerStone Properties which aims to revolutionise the flats renting and PG ecosystem for travelling students.<br>www.thecornerstoneproperty.in</p>
 
 
 <h2 align="center">Desktop Screenshots</h2>
